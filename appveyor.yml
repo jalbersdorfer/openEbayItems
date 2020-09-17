@@ -10,13 +10,13 @@ install:
 
 before_build:
 - ps: >-
-    (gc MobaSSH.au3) -replace 'FileVersion, 1.1.0', "FileVersion, 1.1.$Env:APPVEYOR_BUILD_NUMBER" | Out-File -encoding ASCII MobaSSH.au3
+    (gc openEbayItems.au3) -replace 'FileVersion, 1.1.0', "FileVersion, 1.1.$Env:APPVEYOR_BUILD_NUMBER" | Out-File -encoding ASCII openEbayItems.au3
 
 build_script:
 - cmd: >-
-    "%HOMEDRIVE%\Program Files (x86)\AutoIt3\aut2exe\aut2exe.exe"  /in "%CD%\MobaSSH.au3" /out "%CD%\MobaSSH.exe" /nopack /comp 2 /Console
+    "%HOMEDRIVE%\Program Files (x86)\AutoIt3\aut2exe\aut2exe.exe"  /in "%CD%\openEbayItems.au3" /out "%CD%\openEbayItems.exe" /nopack /comp 2 /Console
 
 test: off
 
 artifacts:
-- path: MobaSSH.exe
+- path: openEbayItems.exe
